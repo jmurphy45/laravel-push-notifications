@@ -38,5 +38,7 @@ class ErorHandler
      */
     public function handleErrorResponse(ResponseInterface $response)
     {
+
+
     }
 }

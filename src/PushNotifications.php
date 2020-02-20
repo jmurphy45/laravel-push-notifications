@@ -2,6 +2,8 @@
 
 namespace jmurphy\PushNotifications;
 
+use jmurphy\PushNotifications\Http\Client;
+
 class PushNotifications
 {
     public $client;
