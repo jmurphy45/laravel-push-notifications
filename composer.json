@@ -1,0 +1,50 @@
+{
+  "name": "jmurphy/push-notifications",
+  "description": "A push notifications",
+  "license": "MIT",
+  "keywords": [
+    "push",
+    "notifications"
+  ],
+  "type": "library",
+  "authors": [
+    {
+      "name": "Jay Murphy",
+      "email": "test@test.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "guzzlehttp/guzzle": "~6.0",
+    "illuminate/support": "^6.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0",
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "jmurphy\\PushNotifications\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "jmurphy\\PushNotifications\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "phpunit": "phpunit"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "jmurphy\\PushNotifications\\ServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
