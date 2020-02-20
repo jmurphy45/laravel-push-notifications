@@ -6,9 +6,8 @@ namespace jmurphy\PushNotifications\Http\Exceptions;
  * Created by PhpStorm.
  * User: josephmurphy
  * Date: 2/19/20
- * Time: 7:17 PM
+ * Time: 7:17 PM.
  */
 class PushNotificationInternalError extends PushNotificationHttpError
 {
-
 }

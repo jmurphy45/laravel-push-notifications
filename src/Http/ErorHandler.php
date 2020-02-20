@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: josephmurphy
  * Date: 2/19/20
- * Time: 7:00 PM
+ * Time: 7:00 PM.
  */
 
 namespace jmurphy\PushNotifications\Http;
@@ -12,7 +12,7 @@ use Illuminate\Http\Response;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class ErrorHandler
+class ErorHandler
 {
     public function __invoke(callable $handler)
     {
@@ -38,6 +38,5 @@ class ErrorHandler
      */
     public function handleErrorResponse(ResponseInterface $response)
     {
-
     }
 }

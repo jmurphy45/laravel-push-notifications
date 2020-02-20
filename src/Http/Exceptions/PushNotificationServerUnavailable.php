@@ -1,12 +1,13 @@
 <?php
 
 namespace jmurphy\PushNotifications\Http\Exceptions;
+
 /**
  * Created by PhpStorm.
  * User: josephmurphy
  * Date: 2/19/20
- * Time: 7:18 PM
+ * Time: 7:18 PM.
  */
-class PushNotificationServerUnavailable extends PushNotificationHttpError{
-
+class PushNotificationServerUnavailable extends PushNotificationHttpError
+{
 }

@@ -1,20 +1,19 @@
 <?php
 
 namespace jmurphy\PushNotifications\Http;
-use GuzzleHttp\HandlerStack;
+
 use GuzzleHttp\Client as HttpClient;
-use \Marat555\Eventbrite\Contracts\Client as ClientInterface;
+use GuzzleHttp\HandlerStack;
 use Illuminate\Support\Arr;
 
 /**
  * Created by PhpStorm.
  * User: josephmurphy
  * Date: 2/19/20
- * Time: 6:52 PM
+ * Time: 6:52 PM.
  */
 class Client
 {
-
     /**
      * @var HttpClient
      */
@@ -24,7 +23,6 @@ class Client
      * @var string
      */
     protected $token;
-
 
     /**
      * @param $baseUrl
@@ -40,15 +38,15 @@ class Client
             'handler' => $stack,
             'base_uri' => $baseUrl,
             'allow_redirects' => [
-                'strict' => true
-            ]
+                'strict' => true,
+            ],
         ]);
 
         $this->token = $token;
     }
 
     /**
-     * Prepare option data to be passed to the Guzzle request
+     * Prepare option data to be passed to the Guzzle request.
      *
      * @param array $params
      * @param array $options
@@ -56,7 +54,7 @@ class Client
      */
     private function prepareData($params = null, $options = [])
     {
-        if (Arr::get($options, 'content_type') == "json") {
+        if (Arr::get($options, 'content_type') == 'json') {
             $data['json'] = $params; // pass data as array which gets json_encoded
         } else {
             $data['query'] = $this->prepareQueryString($params); // pass data as query string
@@ -66,7 +64,7 @@ class Client
     }
 
     /**
-     * Prepare a query string from an array of params
+     * Prepare a query string from an array of params.
      *
      * @param array $params
      * @return string
@@ -75,7 +73,6 @@ class Client
     {
         return preg_replace('/%5B[0-9]+%5D/simU', '', http_build_query($params));
     }
-
 
     /**
      * @param $endPoint
@@ -89,7 +86,7 @@ class Client
         $options['headers']['Authorization'] = "Bearer $this->token";
         $response = $this->client->post($endPoint, $this->prepareData($params, $options));
         switch ($response->getHeader('content-type')) {
-            case "application/json":
+            case 'application/json':
                 return $response->json();
                 break;
             default:

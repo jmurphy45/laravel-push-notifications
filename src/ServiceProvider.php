@@ -4,7 +4,7 @@ namespace jmurphy\PushNotifications;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    const CONFIG_PATH = __DIR__ . '/../config/push-notifications.php';
+    const CONFIG_PATH = __DIR__.'/../config/push-notifications.php';
 
     public function boot()
     {

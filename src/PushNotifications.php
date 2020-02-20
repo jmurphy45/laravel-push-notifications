@@ -4,7 +4,6 @@ namespace jmurphy\PushNotifications;
 
 class PushNotifications
 {
-
     public $client;
 
     public function __construct(Client $client)
@@ -17,11 +16,11 @@ class PushNotifications
         $this->client = $client;
     }
 
-    public function apple(string $name){
-
+    public function apple(string $name)
+    {
     }
 
-    public function andriod(string $name){
-
+    public function andriod(string $name)
+    {
     }
 }
