@@ -2,7 +2,10 @@
 
 namespace jmurphy\PushNotifications;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use jmurphy\PushNotifications\Http\Client;
+use Illuminate\Database\Eloquent\Collection as ModelCollection;
 
 class PushNotifications
 {
@@ -18,11 +21,35 @@ class PushNotifications
         $this->client = $client;
     }
 
-    public function apple(string $name)
+    //PushNotification::apple($users,Notification::class)
+    public function apple($notifiables, $notification)
+    {
+        $notifiables = $this->formatNotifiables($notifiables);
+
+        $original = clone $notification;
+
+        foreach ($notifiables as $notifiable){
+            $this->client->post('',[],['content_type' => 'json']);
+        }
+    }
+
+    public function andriod($notifiables, $notification)
     {
     }
 
-    public function andriod(string $name)
+    /**
+     * Format the notifiables into a Collection / array if necessary.
+     *
+     * @param  mixed  $notifiables
+     * @return \Illuminate\Database\Eloquent\Collection|array
+     */
+    protected function formatNotifiables($notifiables)
     {
+        if (! $notifiables instanceof Collection && ! is_array($notifiables)) {
+            return $notifiables instanceof Model
+                ? new ModelCollection([$notifiables]) : [$notifiables];
+        }
+
+        return $notifiables;
     }
 }

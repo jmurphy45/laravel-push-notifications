@@ -12,7 +12,7 @@ use Illuminate\Http\Response;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class ErorHandler
+class ErrorHandler
 {
     public function __invoke(callable $handler)
     {
