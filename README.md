@@ -1,7 +1,7 @@
 # Push Notifications
 
 [![Build Status](https://travis-ci.org/jmurphy/push-notifications.svg?branch=master)](https://travis-ci.org/jmurphy/push-notifications)
-[![styleci](https://styleci.io/repos/CHANGEME/shield)](https://styleci.io/repos/CHANGEME)
+[![styleci](https://styleci.io/repos/laravel-push-notifications/shield)](https://styleci.io/repos/laravel-push-notifications)
 [![Coverage Status](https://coveralls.io/repos/github/jmurphy/push-notifications/badge.svg?branch=master)](https://coveralls.io/github/jmurphy/push-notifications?branch=master)
 
 [![Packagist](https://img.shields.io/packagist/v/jmurphy/push-notifications.svg)](https://packagist.org/packages/jmurphy/push-notifications)
